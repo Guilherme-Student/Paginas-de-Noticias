@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <style>
     body {
-      background-color: rgb(138, 138, 138);
+      background-color: rgb(222, 222, 222);
       margin: 0; padding: 0;
     } 
 
-    .barra-topo {
+.barra-topo {
       background-color: black;
       width: 100%;
       height: 120px; 
@@ -18,43 +18,126 @@
       left: 0;
       display: flex; 
       align-items: center; 
-      padding-left: 30px;
+      padding-left: 20px;
       box-sizing: border-box;
-    }
+}
 
-    .plantao-alerta {
+.plantao-alerta {
       color: rgb(235, 159, 45);
-      margin-left: 100px;
+      margin-left: 130px;
       font-weight: bold;
       text-transform: uppercase;
       border: 2px solid rgb(235, 159, 45);
       padding: 5px;
-    }
+}
 
 
-    .quadrado-titulo {
+.quadrado-titulo {
       background-color: rgb(255, 255, 255);
       padding: 5px 20px; 
       border-radius: 5px; 
       display: inline-block;
       border: 5px solid rgb(21, 51, 99); 
-    }
+}
 
-    .titulo-site {
+.titulo-site {
       text-align: left;
       color: rgb(21, 59, 99); 
       margin: 0;
       font-size: 2.5rem;
       font-weight: bold;
-    }
+}
 
-    .esquerda {
-      position: fixed;
-      top: 14px; right: 30px; width: 100px; 
+.logo-lateral {
+      margin-left: 100px;
+      width: 100px; 
       border: 5px solid rgb(21, 51, 99); 
       border-radius: 10px;
-    }
+}
 
+.barra-rodape {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 60px; 
+    position: fixed; 
+    bottom: 0;      
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    border-top: 5px solid rgb(235, 159, 45); 
+    font-size: 0.9rem;
+}
+
+.conteudo-rodape a {
+    color: rgb(235, 159, 45);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body {
+    padding-bottom: 70px; 
+}
+
+
+.link-instagram {
+   color: rgb(235, 159, 45);
+   text-decoration: none;
+   font-weight: bold;
+   border: 2px solid rgb(235, 159, 45);
+   padding: 9px 17px;
+   border-radius: 6px;
+   font-size: 0.8rem;
+}
+
+ .link-instagram:hover {
+    background-color: rgb(235, 159, 45);
+    color: black;
+}
+
+
+.container-noticias {
+    max-width: 900px;
+    margin: 40px auto; 
+    padding: 0 20px;
+}
+
+.noticia-item {
+    display: flex; 
+    background-color: rgb(222, 222, 222);
+    margin-bottom: 20px; 
+    border-radius: 8px;
+    overflow: hidden;
+    border-left: 8px solid rgb(21, 51, 99);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.noticia-imagem {
+    width: 250px;
+    height: 150px;
+    background-color: rgb(0, 0, 0); 
+    object-fit: cover; 
+}
+
+.noticia-texto {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.noticia-texto h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+    color: rgb(0, 0, 0);
+}
+
+.noticia-texto p {
+    margin: 0;
+    color: #000000;
+    line-height: 1.5;
+}
 
 
 </style>
@@ -68,10 +151,90 @@
     </div>
     <div class="plantao-alerta">ＦＩＱＵＥ　ＰＯＲ　ＤＥＮＴＲＯ　ＤＡＳ　ＰＲＩＮＣＩＰＡＩＳ　
       ＮＯＴÍＣＩＡＳ　<br> ＤＯ　ＢＲＡＳＩＬ　Ｅ　ＤＯ　ＭＵＮＤＯ　ＥＭ　ＴＥＭＰＯ　ＲＥＡＬ</div>
+    <img src="flash.png" alt="Logo-lateral" class="logo-lateral">
   </header>
 
-  <img src="flash.png" alt="Esquerda" class="esquerda">
+
+  <footer class="barra-rodape">
+    <div class="conteudo-rodape">
+      <span>©　２０２６　Ｆｌａｓｈ　Ｎｅｗｓ － Ｔｏｄｏｓ　ｏｓ　ｄｉｒｅｉｔｏｓ
+        　ｒｅｓｅｒｖａｄｏｓ</span>
+         <a href="https://www.instagram.com/FlashNewBrof" target="_blank" 
+         class="link-instagram">𝗦𝗜𝗚𝗔 𝗡𝗢 𝗜𝗡𝗦𝗧𝗔𝗚𝗥𝗔𝗠</a>
+    </div>
+  </footer>
+
   
+  
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+
+
+  <main class="container-noticias">
+
+    <div class="noticia-item">
+      <img src="dolar.jpg" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Dólar cai abaixo de R$ 5,00</h2>
+        <p>Pela primeira vez em dois anos, a moeda americana fechou abaixo do patamar de R$ 5,00, sendo cotada hoje na casa dos R$ 4,98. 
+          O movimento é impulsionado pelos juros elevados no Brasil, pela força das exportações de 
+          commodities e por uma relativa distância do país em relação aos 
+          conflitos diretos no Oriente Médio.</p>
+      </div>
+    </div>
+
+    <div class="noticia-item">
+      <img src="vini.jpg" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Agenda da Seleção: Rumo à Copa do Mundo 2026</h2>
+        <p>Com a proximidade da Copa do Mundo em junho, a agenda da Seleção Masculina está definida. O Brasil 
+          terá amistosos cruciais contra o Panamá (31/05) e o Egito (06/06) antes da estreia oficial no torneio, 
+          marcada para o dia 13 de junho contra o Marrocos, no MetLife Stadium, nos EUA.</p>
+      </div>
+    </div>
+
+    <div class="noticia-item">
+      <img src="imposto.jpg" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Imposto de Renda 2026: Recorde de Entregas</h2>
+        <p>A Receita Federal informou que a entrega das declarações do IRPF 2026 bateu um recorde histórico, 
+          superando 10 milhões de documentos em apenas 18 dias de prazo. O aumento do uso da declaração 
+          pré-preenchida tem sido o principal facilitador para os contribuintes este ano.</p>
+      </div>
+    </div>
+
+    <div class="noticia-item">
+      <img src="italia.jpg" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Itália suspende cooperação de defesa com Israel</h2>
+        <p>Em um movimento diplomático forte, o governo da Itália anunciou a suspensão de seus acordos de cooperação em defesa com Israel. 
+          A decisão ocorre em meio a pressões internacionais e mudanças na política externa europeia. 
+          O anúncio causou impacto imediato nas relações da União Europeia com o Oriente Médio e gerou debates sobre segurança global.</p>
+      </div>
+    </div>
+
+    <div class="noticia-item">
+      <img src="liverpool.jpg" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Liverpool x PSG na Champions League</h2>
+        <p>O clima é de decisão no futebol europeu. Hoje acontecem os jogos de volta das quartas de final da UEFA Champions League, 
+          com destaque para o confronto entre Liverpool e PSG. Além do espetáculo em campo, o PSG prestou homenagens ao jogador Diogo 
+          Jota antes da partida, mobilizando as redes sociais de torcedores ao redor do mundo.</p>
+      </div>
+    </div>
+
+    <div class="noticia-item">
+      <img src="michael.jpg" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Estreias de Cinema: A Múmia e Michael</h2>
+        <p>O calendário de blockbusters está agitado. Nesta semana, o relançamento de A Múmia chega aos cinemas, 
+          enquanto a expectativa cresce para a cinebiografia Michael, sobre Michael Jackson, que estreia no dia 23. 
+          Outro destaque é a sequência de Casamento Sangrento, que já está em cartaz atraindo os fãs de terror e suspense.</p>
+      </div>
+    </div>
+
+  </main>
+
+
 </body>
 
 

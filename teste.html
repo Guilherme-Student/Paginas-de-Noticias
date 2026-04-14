@@ -1,148 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+<meta charset="UTF-8">
+<style>
     body {
-      background-color: rgb(138, 138, 138);
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+      background-color: rgb(222, 222, 222);
+      margin: 0; padding: 0;
+      font-family: sans-serif;
+    } 
 
-    /* BARRA DE TOPO */
     .barra-topo {
       background-color: black;
       width: 100%;
-      height: 120px;
-      position: sticky;
-      top: 0;
-      display: flex;
-      align-items: center;
-      padding: 0 30px;
+      height: 120px; 
+      position: relative; /* Mudei para relative para não cobrir as notícias */
+      display: flex; 
+      align-items: center; 
+      padding-left: 30px;
       box-sizing: border-box;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .plantao-alerta {
+      color: rgb(235, 159, 45);
+      margin-left: 50px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid rgb(235, 159, 45);
+      padding: 5px;
+      font-size: 0.8rem;
     }
 
     .quadrado-titulo {
       background-color: rgb(255, 255, 255);
-      padding: 5px 20px;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
+      padding: 5px 20px; 
+      border-radius: 5px; 
+      display: inline-block;
+      border: 5px solid rgb(21, 51, 99); 
     }
 
     .titulo-site {
-      color: rgb(21, 59, 99);
+      text-align: left;
+      color: rgb(21, 59, 99); 
       margin: 0;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: bold;
     }
 
-    /* INFORMAÇÃO EM ALTA AO LADO DO TITULO */
-    .badge-urgente {
-      background-color: #d9534f;
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      animation: pulse 1.5s infinite;
+    /* --- ÁREA DE NOTÍCIAS --- */
+    .container-noticias {
+      max-width: 900px;
+      margin: 40px auto; /* Centraliza na tela */
+      padding: 0 20px;
     }
 
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-
-    .esquerda {
-      position: absolute;
-      right: 30px;
-      width: 80px;
-    }
-
-    /* ORGANIZAÇÃO DAS NOTÍCIAS */
-    .secao-titulo {
-      color: white;
-      text-align: center;
-      margin-top: 30px;
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .grid-noticias {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      padding: 20px 50px;
-    }
-
-    .card-noticia {
+    .noticia-item {
+      display: flex; /* Faz a imagem e o texto ficarem na horizontal */
       background-color: white;
-      border-radius: 10px;
+      margin-bottom: 20px; /* Espaço entre uma notícia e outra (vertical) */
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      border-left: 8px solid rgb(21, 51, 99);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .noticia-imagem {
+      width: 250px;
+      height: 150px;
+      background-color: #ccc; /* Cor de fundo caso não tenha imagem */
+      object-fit: cover; /* Ajusta a imagem sem distorcer */
+    }
+
+    .noticia-texto {
+      padding: 15px;
       display: flex;
       flex-direction: column;
-    }
-
-    .img-fake {
-      height: 150px;
-      background: #2c3e50;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      color: #7f8c8d;
-      font-weight: bold;
     }
 
-    .conteudo-noticia {
-      padding: 20px;
-    }
-
-    .noticia-titulo {
-      color: #153b63;
+    .noticia-texto h2 {
       margin: 0 0 10px 0;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      color: #333;
     }
 
-    .noticia-desc {
-      color: #444;
-      font-size: 0.95rem;
+    .noticia-texto p {
+      margin: 0;
+      color: #666;
       line-height: 1.5;
     }
 
-    /* RODAPÉ */
-    .rodape {
-      text-align: center;
-      padding: 50px 0;
-      background-color: #000;
-      color: white;
-      margin-top: 40px;
+    /* --- RODAPÉ --- */
+    .barra-rodape {
+      background-color: rgb(0, 0, 0);
+      width: 100%;
+      height: 70px; 
+      position: fixed; 
+      bottom: 0; left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(255, 255, 255);
+      border-top: 5px solid rgb(235, 159, 45); 
+      font-size: 0.9rem;
+      z-index: 10;
     }
 
-    .insta-link {
-      color: #f09433;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: 2px solid #f09433;
-      padding: 10px 25px;
-      border-radius: 30px;
-      transition: 0.3s;
+    .conteudo-rodape {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .insta-link:hover {
-      background: #f09433;
-      color: white;
+    .link-instagram {
+       color: rgb(235, 159, 45);
+       text-decoration: none;
+       font-weight: bold;
+       border: 2px solid rgb(235, 159, 45);
+       padding: 8px 15px;
+       border-radius: 6px;
     }
-  </style>
+
+    .logo-lateral {
+      position: fixed;
+      top: 14px; right: 30px; width: 100px; 
+      border: 5px solid rgb(21, 51, 99); 
+      border-radius: 10px;
+      z-index: 20;
+    }
+
+    body { padding-bottom: 100px; }
+</style>
 </head>
 
 <body>
@@ -150,69 +138,72 @@
   <header class="barra-topo">
     <div class="quadrado-titulo">
       <h1 class="titulo-site">ＦＬＡＳＨ　ＮＥＷＳ</h1>
-      <span class="badge-urgente">LIVE: DÓLAR ABAIXO DE R$ 5,00</span>
     </div>
-    <img src="flash.png" alt="Logo" class="esquerda">
+    <div class="plantao-alerta">
+        FIQUE POR DENTRO DAS PRINCIPAIS NOTÍCIAS EM TEMPO REAL
+    </div>
   </header>
 
-  <h2 class="secao-titulo">➔ Grupo 1: Economia e Política</h2>
-  <section class="grid-noticias">
-    <article class="card-noticia">
-      <div class="img-fake">ECONOMIA</div>
-      <div class="conteudo-noticia">
-        <h3 class="noticia-titulo">Dólar cai abaixo de R$ 5,00</h3>
-        <p class="noticia-desc">Pela primeira vez em dois anos, a moeda americana recua com força. O mercado reage positivamente ao novo recorde do Ibovespa, que superou os 198 mil pontos nesta terça-feira.</p>
-      </div>
-    </article>
+  <main class="container-noticias">
 
-    <article class="card-noticia">
-      <div class="img-fake">POLÍTICA</div>
-      <div class="conteudo-noticia">
-        <h3 class="noticia-titulo">STF decide sobre caso Marco Buzzi</h3>
-        <p class="noticia-desc">O Supremo Tribunal Federal pauta para hoje o julgamento envolvendo acusações contra o ministro. A decisão é aguardada com cautela pelos bastidores de Brasília.</p>
+    <div class="noticia-item">
+      <img src="https://via.placeholder.com/250x150" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Título da Notícia Principal 1</h2>
+        <p>Aqui vai a descrição da notícia. No ano de 2026, as tecnologias avançam rápido e o Brasil se destaca no cenário internacional.</p>
       </div>
-    </article>
+    </div>
 
-    <article class="card-noticia">
-      <div class="img-fake">BRASIL</div>
-      <div class="conteudo-noticia">
-        <h3 class="noticia-titulo">Enem 2026: Isenção liberada</h3>
-        <p class="noticia-desc">Começou hoje o prazo para solicitar a isenção da taxa de inscrição do Enem 2026. Estudantes de baixa renda têm até o final do mês para garantir o benefício.</p>
+    <div class="noticia-item">
+      <img src="https://via.placeholder.com/250x150" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Lançamento Tecnológico no Brasil</h2>
+        <p>Novos investimentos em inteligência artificial prometem mudar o mercado de trabalho nas capitais brasileiras.</p>
       </div>
-    </article>
-  </section>
+    </div>
 
-  <h2 class="secao-titulo">➔ Grupo 2: Tecnologia e Natureza</h2>
-  <section class="grid-noticias">
-    <article class="card-noticia">
-      <div class="img-fake">TECNOLOGIA</div>
-      <div class="conteudo-noticia">
-        <h3 class="noticia-titulo">Brasil e China firmam parceria em IA</h3>
-        <p class="noticia-desc">Os dois países assinaram um acordo estratégico para o desenvolvimento conjunto de Inteligência Artificial voltada para a gestão pública e saúde sustentável.</p>
+    <div class="noticia-item">
+      <img src="https://via.placeholder.com/250x150" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Clima e Meio Ambiente</h2>
+        <p>Especialistas debatem novas soluções para a preservação da Amazônia durante a conferência mundial de abril.</p>
       </div>
-    </article>
+    </div>
 
-    <article class="card-noticia">
-      <div class="img-fake">MEIO AMBIENTE</div>
-      <div class="conteudo-noticia">
-        <h3 class="noticia-titulo">Araras-azul voltam ao Rio de Janeiro</h3>
-        <p class="noticia-desc">Após 200 anos de desaparecimento na capital fluminense, o projeto de reintrodução celebra o nascimento dos primeiros filhotes em liberdade no Parque Nacional da Tijuca.</p>
+    <div class="noticia-item">
+      <img src="https://via.placeholder.com/250x150" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Esportes: Rumo ao Título</h2>
+        <p>A seleção nacional entra em campo hoje para decidir sua vaga na final do campeonato internacional de 2026.</p>
       </div>
-    </article>
+    </div>
 
-    <article class="card-noticia">
-      <div class="img-fake">CLIMA</div>
-      <div class="conteudo-noticia">
-        <h3 class="noticia-titulo">Alerta Geo-Hidrológico no Norte</h3>
-        <p class="noticia-desc">O Cemaden emitiu alerta de risco moderado para Manaus devido à previsão de chuvas intensas. Autoridades monitoram áreas de drenagem deficiente.</p>
+    <div class="noticia-item">
+      <img src="https://via.placeholder.com/250x150" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Economia em Alta</h2>
+        <p>O índice da bolsa de valores atinge recorde histórico nesta terça-feira após anúncio de reformas econômicas.</p>
       </div>
-    </article>
-  </section>
+    </div>
 
-  <footer class="rodape">
-    <p>Acompanhe atualizações em tempo real:</p>
-    <a href="https://www.instagram.com/flashnews" class="insta-link">@flashnews no Instagram</a>
+    <div class="noticia-item">
+      <img src="https://via.placeholder.com/250x150" alt="Imagem da Notícia" class="noticia-imagem">
+      <div class="noticia-texto">
+        <h2>Cultura e Eventos</h2>
+        <p>Festival de música de rua atrai milhares de pessoas no centro da cidade, celebrando a arte e a diversidade.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="barra-rodape">
+    <div class="conteudo-rodape">
+      <span>© 2026 Flash News - Todos os direitos reservados</span>
+      <a href="https://www.instagram.com/FlashNewBrof" target="_blank" class="link-instagram">SIGA NO INSTAGRAM</a>
+    </div>
   </footer>
 
+  <img src="flash.png" alt="Logo-lateral" class="logo-lateral">
+  
 </body>
 </html>
