@@ -1,11 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: rgb(138, 138, 138);
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* BARRA DE TOPO */
+    .barra-topo {
+      background-color: black;
+      width: 100%;
+      height: 120px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      box-sizing: border-box;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .quadrado-titulo {
+      background-color: rgb(255, 255, 255);
+      padding: 5px 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .titulo-site {
+      color: rgb(21, 59, 99);
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+
+    /* INFORMAÇÃO EM ALTA AO LADO DO TITULO */
+    .badge-urgente {
+      background-color: #d9534f;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    .esquerda {
+      position: absolute;
+      right: 30px;
+      width: 80px;
+    }
+
+    /* ORGANIZAÇÃO DAS NOTÍCIAS */
+    .secao-titulo {
+      color: white;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .grid-noticias {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      padding: 20px 50px;
+    }
+
+    .card-noticia {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .img-fake {
+      height: 150px;
+      background: #2c3e50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7f8c8d;
+      font-weight: bold;
+    }
+
+    .conteudo-noticia {
+      padding: 20px;
+    }
+
+    .noticia-titulo {
+      color: #153b63;
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .noticia-desc {
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* RODAPÉ */
+    .rodape {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #000;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .insta-link {
+      color: #f09433;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: 2px solid #f09433;
+      padding: 10px 25px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .insta-link:hover {
+      background: #f09433;
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
-    AAAAAAAAAAAAAAAAAAAAA
+
+  <header class="barra-topo">
+    <div class="quadrado-titulo">
+      <h1 class="titulo-site">ＦＬＡＳＨ　ＮＥＷＳ</h1>
+      <span class="badge-urgente">LIVE: DÓLAR ABAIXO DE R$ 5,00</span>
+    </div>
+    <img src="flash.png" alt="Logo" class="esquerda">
+  </header>
+
+  <h2 class="secao-titulo">➔ Grupo 1: Economia e Política</h2>
+  <section class="grid-noticias">
+    <article class="card-noticia">
+      <div class="img-fake">ECONOMIA</div>
+      <div class="conteudo-noticia">
+        <h3 class="noticia-titulo">Dólar cai abaixo de R$ 5,00</h3>
+        <p class="noticia-desc">Pela primeira vez em dois anos, a moeda americana recua com força. O mercado reage positivamente ao novo recorde do Ibovespa, que superou os 198 mil pontos nesta terça-feira.</p>
+      </div>
+    </article>
+
+    <article class="card-noticia">
+      <div class="img-fake">POLÍTICA</div>
+      <div class="conteudo-noticia">
+        <h3 class="noticia-titulo">STF decide sobre caso Marco Buzzi</h3>
+        <p class="noticia-desc">O Supremo Tribunal Federal pauta para hoje o julgamento envolvendo acusações contra o ministro. A decisão é aguardada com cautela pelos bastidores de Brasília.</p>
+      </div>
+    </article>
+
+    <article class="card-noticia">
+      <div class="img-fake">BRASIL</div>
+      <div class="conteudo-noticia">
+        <h3 class="noticia-titulo">Enem 2026: Isenção liberada</h3>
+        <p class="noticia-desc">Começou hoje o prazo para solicitar a isenção da taxa de inscrição do Enem 2026. Estudantes de baixa renda têm até o final do mês para garantir o benefício.</p>
+      </div>
+    </article>
+  </section>
+
+  <h2 class="secao-titulo">➔ Grupo 2: Tecnologia e Natureza</h2>
+  <section class="grid-noticias">
+    <article class="card-noticia">
+      <div class="img-fake">TECNOLOGIA</div>
+      <div class="conteudo-noticia">
+        <h3 class="noticia-titulo">Brasil e China firmam parceria em IA</h3>
+        <p class="noticia-desc">Os dois países assinaram um acordo estratégico para o desenvolvimento conjunto de Inteligência Artificial voltada para a gestão pública e saúde sustentável.</p>
+      </div>
+    </article>
+
+    <article class="card-noticia">
+      <div class="img-fake">MEIO AMBIENTE</div>
+      <div class="conteudo-noticia">
+        <h3 class="noticia-titulo">Araras-azul voltam ao Rio de Janeiro</h3>
+        <p class="noticia-desc">Após 200 anos de desaparecimento na capital fluminense, o projeto de reintrodução celebra o nascimento dos primeiros filhotes em liberdade no Parque Nacional da Tijuca.</p>
+      </div>
+    </article>
+
+    <article class="card-noticia">
+      <div class="img-fake">CLIMA</div>
+      <div class="conteudo-noticia">
+        <h3 class="noticia-titulo">Alerta Geo-Hidrológico no Norte</h3>
+        <p class="noticia-desc">O Cemaden emitiu alerta de risco moderado para Manaus devido à previsão de chuvas intensas. Autoridades monitoram áreas de drenagem deficiente.</p>
+      </div>
+    </article>
+  </section>
+
+  <footer class="rodape">
+    <p>Acompanhe atualizações em tempo real:</p>
+    <a href="https://www.instagram.com/flashnews" class="insta-link">@flashnews no Instagram</a>
+  </footer>
+
 </body>
 </html>

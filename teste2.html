@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background-color: rgb(138, 138, 138);
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .barra-topo {
+      background-color: black;
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      padding-left: 30px;
+      box-sizing: border-box;
+    }
+
+    .quadrado-titulo {
+      background-color: rgb(255, 255, 255);
+      padding: 5px 20px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .titulo-site {
+      text-align: left;
+      color: rgb(21, 59, 99);
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    /* Informação que chama atenção ao lado do título */
+    .plantao-alerta {
+      color: rgb(255, 255, 255);
+      margin-left: 270px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 1px solid rgb(255, 255, 255);
+      padding: 5px;
+    }
+
+    .esquerda {
+      position: absolute;
+      top: 18px;
+      right: 30px;
+      width: 100px;
+    }
+
+    .conteudo {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grupo-noticias {
+      background-color: white;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .noticia-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    h2 {
+      color: #153b63;
+      border-bottom: 2px solid red;
+    }
+
+    h3 {
+      margin: 5px 0;
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .rodape {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #f1f1f1;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="barra-topo">
+    <div class="quadrado-titulo">
+      <h1 class="titulo-site">ＦＬＡＳＨ　ＮＥＷＳ</h1>
+    </div>
+    <div class="plantao-alerta">
+      URGENTE: NOVAS DECISÕES NO GOVERNO!
+    </div>
+  </header>
+
+  <img src="flash.png" alt="Logo" class="esquerda">
+
+  <div class="conteudo">
+
+    <div class="grupo-noticias">
+      <h2>NOTÍCIAS DO BRASIL</h2>
+
+      <div class="noticia-item">
+        <h3>1. Mudanças no Imposto de Renda 2026</h3>
+        <p>O governo anunciou novas faixas de isenção que devem beneficiar quem ganha até dois salários mínimos. A ideia é ajustar a tabela para aliviar o bolso da classe média, mas especialistas ainda discutem de onde virá o dinheiro para cobrir esse rombo.</p>
+      </div>
+
+      <div class="noticia-item">
+        <h3>2. Crise Hídrica e a Conta de Luz</h3>
+        <p>Com a falta de chuvas em reservatórios importantes do Sudeste, a Aneel confirmou que a bandeira tarifária pode subir no próximo mês. Isso significa que a conta de luz vai ficar mais cara para o consumidor final para evitar apagões.</p>
+      </div>
+
+      <div class="noticia-item">
+        <h3>3. Avanço da Tecnologia 5G no Interior</h3>
+        <p>Mais de 500 novas cidades do interior do Brasil receberam sinal de 5G esta semana. As operadoras prometem internet até 10 vezes mais rápida, facilitando o trabalho no campo e em pequenas empresas que dependem da rede.</p>
+      </div>
+    </div>
+
+    <div class="grupo-noticias">
+      <h2>NOTÍCIAS DO MUNDO</h2>
+
+      <div class="noticia-item">
+        <h3>1. Tensões Geopolíticas na Europa</h3>
+        <p>Novos acordos de defesa estão sendo assinados entre países da OTAN devido ao aumento de exercícios militares na fronteira. A situação diplomática segue tensa, com líderes buscando evitar um conflito direto em larga escala.</p>
+      </div>
+
+      <div class="noticia-item">
+        <h3>2. Nova Variante de Vírus Monitorada</h3>
+        <p>A Organização Mundial da Saúde está de olho em uma subvariante respiratória que surgiu na Ásia. Apesar de não causar casos graves até agora, a recomendação é manter a vacinação em dia para evitar surtos globais como os de antigamente.</p>
+      </div>
+
+      <div class="noticia-item">
+        <h3>3. Exploração em Marte: Nova Descoberta</h3>
+        <p>A agência espacial encontrou indícios de antigos canais de água potável em crateras profundas de Marte. Isso reforça a teoria de que o planeta vermelho já foi habitável e acelera os planos para missões tripuladas na próxima década.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Flash News - Todos os direitos reservados</p>
+  </footer>
+
+</body>
+
+</html>
